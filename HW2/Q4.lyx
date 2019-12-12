@@ -1,0 +1,363 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+  
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding cp1255
+\fontencoding global
+\font_roman "default" "Times New Roman"
+\font_sans "default" "Times New Roman"
+\font_typewriter "default" "Times New Roman"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phi:[0,1)\times[0,1)\rightarrow\mathbb{R}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\phi(x,y)=exp\left(-\frac{4x^{2}+9y^{2}}{2\epsilon}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The properties of the signal required for the bit allocation optimization
+ are:
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}\phi(x,y)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}exp\left(-\frac{4x^{2}+9y^{2}}{2\epsilon}\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(-\frac{4x}{\epsilon}exp\left(-\frac{4x^{2}+9y^{2}}{2\epsilon}\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{16}{\epsilon^{2}}\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}x^{2}exp\left(-\frac{4x^{2}+9y^{2}}{\epsilon}\right)dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{16}{\epsilon^{2}}\stackrel[0]{1}{\intop}x^{2}exp\left(-\frac{4x^{2}}{\epsilon}\right)dx\stackrel[0]{1}{\intop}exp\left(-\frac{9y^{2}}{\epsilon}\right)dy
+\]
+
+\end_inset
+
+First, lets calculate the 
+\begin_inset Formula $dx$
+\end_inset
+
+ integral:
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}x^{2}exp\left(-\frac{4x^{2}}{\epsilon}\right)dx=_{(1)}\left.-\frac{\epsilon}{8}x\cdot exp\left(-\frac{4x^{2}}{\epsilon}\right)\right|_{0}^{1}+\frac{\epsilon}{8}\stackrel[0]{1}{\intop}exp\left(-\frac{4x^{2}}{\epsilon}\right)dx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=_{(2)}\frac{\epsilon}{8}\left(-exp\left(-\frac{4}{\epsilon}\right)+\frac{\sqrt{\epsilon}}{2}\stackrel[0]{\frac{2}{\sqrt{\epsilon}}}{\intop}exp\left(-t^{2}\right)dt\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\epsilon}{8}\left(-exp\left(-\frac{4}{\epsilon}\right)+\frac{\sqrt{\epsilon}}{2}\frac{\sqrt{\pi}}{2}erf\left(\frac{2}{\sqrt{\epsilon}}\right)\right)
+\]
+
+\end_inset
+
+Explanations:
+\begin_inset Newline newline
+\end_inset
+
+(1) : integration by parts.
+\begin_inset Newline newline
+\end_inset
+
+(2) : variable changing 
+\begin_inset Formula $t^{2}=\frac{4x^{2}}{\epsilon}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now lets calculate the 
+\begin_inset Formula $dy$
+\end_inset
+
+ integral:
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}exp\left(-\frac{9y^{2}}{\epsilon}\right)dy=_{(1)}\frac{\sqrt{\epsilon}}{3}\stackrel[0]{\frac{3}{\sqrt{\epsilon}}}{\intop}exp\left(-t^{2}\right)dt=\frac{\sqrt{\epsilon}}{3}\frac{\sqrt{\pi}}{2}erf\left(\frac{3}{\sqrt{\epsilon}}\right)
+\]
+
+\end_inset
+
+Explanation : (1) : variable changing 
+\begin_inset Formula $t^{2}=\frac{4x^{2}}{\epsilon}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Downarrow
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\frac{16}{\epsilon^{2}}\frac{\epsilon}{8}\left(-exp\left(-\frac{4}{\epsilon}\right)+\frac{\sqrt{\epsilon}}{2}\frac{\sqrt{\pi}}{2}erf\left(\frac{2}{\sqrt{\epsilon}}\right)\right)\frac{\sqrt{\epsilon}}{3}\frac{\sqrt{\pi}}{2}erf\left(\frac{3}{\sqrt{\epsilon}}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\frac{\sqrt{\pi}}{3\sqrt{\epsilon}}\left(-exp\left(-\frac{4}{\epsilon}\right)+\frac{\sqrt{\epsilon}}{2}\frac{\sqrt{\pi}}{2}erf\left(\frac{2}{\sqrt{\epsilon}}\right)\right)erf\left(\frac{3}{\sqrt{\epsilon}}\right)\approx0.2497
+\]
+
+\end_inset
+
+Now we calculate 
+\begin_inset Formula $Energy\left(\phi'_{y}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{y}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial y}\phi(x,y)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial y}exp\left(-\frac{4x^{2}+9y^{2}}{2\epsilon}\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(-\frac{9y}{\epsilon}exp\left(-\frac{4x^{2}+9y^{2}}{2\epsilon}\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{81}{\epsilon^{2}}\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}y^{2}exp\left(-\frac{4x^{2}+9y^{2}}{\epsilon}\right)dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{81}{\epsilon^{2}}\stackrel[0]{1}{\intop}y^{2}exp\left(-\frac{9y^{2}}{\epsilon}\right)dy\stackrel[0]{1}{\intop}exp\left(-\frac{4x^{2}}{\epsilon}\right)dx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Downarrow Same\,as\,before
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{y}\right)=\frac{81}{\epsilon^{2}}\frac{\sqrt{\pi}\sqrt{\epsilon}}{4}erf\left(\frac{2}{\sqrt{\epsilon}}\right)\frac{\epsilon}{108}\left(\sqrt{\pi}\sqrt{\epsilon}erf\left(\frac{3}{\sqrt{\epsilon}}\right)-6exp\left(-\frac{9}{\epsilon}\right)\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{y}\right)=\frac{3\sqrt{\pi}}{16\sqrt{\epsilon}}erf\left(\frac{2}{\sqrt{\epsilon}}\right)\left(\sqrt{\pi}\sqrt{\epsilon}erf\left(\frac{3}{\sqrt{\epsilon}}\right)-6exp\left(-\frac{9}{\epsilon}\right)\right)\approx0.5860
+\]
+
+\end_inset
+
+The signal has maximal value of 
+\begin_inset Formula $\phi_{H}=\phi(0,0)=e^{0}=1$
+\end_inset
+
+ and a minimal value of 
+\begin_inset Formula $\phi_{L}=\phi(1,1)=exp\left(-\frac{13}{2\epsilon}\right)$
+\end_inset
+
+ and the range of values the function gets is of size: 
+\begin_inset Formula $\phi_{H}-\phi_{L}=1-exp\left(-\frac{13}{2\epsilon}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The bit allocation optimization problem is:
+\begin_inset Formula 
+\[
+\underset{N_{x},N_{y},b}{min}\frac{1}{12N_{x}^{2}}Energy\left(\phi'_{x}\right)+\frac{1}{12N_{y}^{2}}Energy\left(\phi_{y}^{2}\right)+\frac{1}{12}\frac{\left(\phi_{H}-\phi_{L}\right)^{2}}{2^{2b}}
+\]
+
+\end_inset
+
+Subject to 
+\begin_inset Formula $N_{x},N_{y},b=B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The properties of the signal 
+\begin_inset Formula $\psi(x,y)=exp\left(-\frac{x^{2}+y^{2}}{2\epsilon}\right)$
+\end_inset
+
+ are:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The range of values : 
+\begin_inset Formula $\psi_{H}-\psi_{L}=1-exp\left(-\frac{1}{\epsilon}\right)<1-exp\left(-\frac{13}{2\epsilon}\right)=\phi_{H}-\phi_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Energy\left(\psi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}\psi(x,y)\right)^{2}dxdy=\frac{\sqrt{\pi}}{8\sqrt{\epsilon}}\left(\sqrt{\pi}\sqrt{\epsilon}\cdot erf\left(\frac{1}{\sqrt{\epsilon}}\right)-2exp\left(-\frac{1}{\epsilon}\right)\right)erf\left(\frac{1}{\sqrt{\epsilon}}\right)\approx0.1415<Energy\left(\phi'_{x}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Energy\left(\psi'_{y}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial y}\phi(x,y)\right)^{2}dxdy=\frac{\sqrt{\pi}}{8\sqrt{\epsilon}}\left(\sqrt{\pi}\sqrt{\epsilon}\cdot erf\left(\frac{1}{\sqrt{\epsilon}}\right)-2exp\left(-\frac{1}{\epsilon}\right)\right)erf\left(\frac{1}{\sqrt{\epsilon}}\right)\approx0.1415<Energy\left(\phi'_{y}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

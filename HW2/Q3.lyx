@@ -1,0 +1,468 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+  
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding cp1255
+\fontencoding global
+\font_roman "default" "Times New Roman"
+\font_sans "default" "Times New Roman"
+\font_typewriter "default" "Times New Roman"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+3
+\end_layout
+
+\begin_layout Enumerate
+First, since 
+\begin_inset Formula $\left\{ \alpha\right\} _{i=1}^{n},\left\{ \beta\right\} _{i=1}^{n}$
+\end_inset
+
+ are orthonormal set, as we studied in class it means that:
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}\alpha_{i}(t)\alpha_{j}(t)dt=\delta_{ij}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}\beta_{i}(t)\beta_{j}(t)dt=\delta_{ij}
+\]
+
+\end_inset
+
+As for the set :
+\begin_inset Formula $\psi_{i}(t)=\frac{1}{\sqrt{2}}\begin{bmatrix}\alpha_{i}(x)\\
+\beta_{i}(x)
+\end{bmatrix}$
+\end_inset
+
+, first we will prove they are normalized using the inner-producr defined
+ in the question:
+\begin_inset Formula 
+\[
+\left\langle \psi_{i},\psi_{i}\right\rangle =\stackrel[0]{1}{\intop}\left(\frac{1}{\sqrt{2}}\alpha_{i}(t)\frac{1}{\sqrt{2}}\alpha_{i}(t)+\frac{1}{\sqrt{2}}\beta_{i}(t)\frac{1}{\sqrt{2}}\beta_{i}(t)\right)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{1}{2}\stackrel[0]{1}{\intop}\alpha_{i}(t)\alpha_{i}(t)dt+\frac{1}{2}\stackrel[0]{1}{\intop}\beta_{i}(t)\beta_{i}(t)dt=_{(1)}\frac{1}{2}\cdotp1+\frac{1}{2}\cdotp1=1
+\]
+
+\end_inset
+
+Explanations:
+\begin_inset Newline newline
+\end_inset
+
+(1) : We used the orthogonality of 
+\begin_inset Formula $\left\{ \alpha\right\} _{i=1}^{n},\left\{ \beta\right\} _{i=1}^{n}$
+\end_inset
+
+ which means: 
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}\alpha_{i}(t)\alpha_{i}(t)dt=1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}\beta_{i}(t)\beta_{i}(t)dt=1
+\]
+
+\end_inset
+
+Now we prove they are orthogonal, for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left\langle \psi_{i},\psi_{j}\right\rangle =\stackrel[0]{1}{\intop}\left(\frac{1}{\sqrt{2}}\alpha_{i}(t)\frac{1}{\sqrt{2}}\alpha_{j}(t)+\frac{1}{\sqrt{2}}\beta_{i}(t)\frac{1}{\sqrt{2}}\beta_{j}(t)\right)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{1}{2}\stackrel[0]{1}{\intop}\alpha_{i}(t)\alpha_{j}(t)dt+\frac{1}{2}\stackrel[0]{1}{\intop}\beta_{i}(t)\beta_{j}(t)dt=_{(1)}\frac{1}{2}\cdotp0+\frac{1}{2}\cdotp0=0
+\]
+
+\end_inset
+
+Explanations:
+\begin_inset Newline newline
+\end_inset
+
+(1) : We used the orthogonality of 
+\begin_inset Formula $\left\{ \alpha\right\} _{i=1}^{n},\left\{ \beta\right\} _{i=1}^{n}$
+\end_inset
+
+ which means: 
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}\alpha_{i}(t)\alpha_{j}(t)d=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\intop}\beta_{i}(t)\beta_{j}(t)dt=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\psi_{i}(t):[0,1)\rightarrow\mathbb{R}^{2},\phi(t):[0,1)\rightarrow\mathbb{R}^{2}$
+\end_inset
+
+, therefore we can define 
+\begin_inset Formula $\psi_{i}(t)\triangleq\begin{bmatrix}\psi_{i}^{1}(t)\\
+\psi_{i}^{2}(t)
+\end{bmatrix},\phi(t)\triangleq\begin{bmatrix}\phi^{1}(t)\\
+\phi^{2}(t)
+\end{bmatrix}$
+\end_inset
+
+, than:
+\begin_inset Formula 
+\[
+\overset{\sim}{\phi}(t)=\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}(t)=\stackrel[i=1]{N}{\sum}\phi_{i}\begin{bmatrix}\psi_{i}^{1}(t)\\
+\psi_{i}^{2}(t)
+\end{bmatrix}=\begin{bmatrix}\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\\
+\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)
+\end{bmatrix}
+\]
+
+\end_inset
+
+now we use this expression in order to calculate the error:
+\begin_inset Formula 
+\[
+\phi(t)-\overset{\sim}{\phi}(t)=\begin{bmatrix}\phi^{1}(t)\\
+\phi^{2}(t)
+\end{bmatrix}-\begin{bmatrix}\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\\
+\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)
+\end{bmatrix}=\begin{bmatrix}\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\\
+\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)
+\end{bmatrix}
+\]
+
+\end_inset
+
+and the approximation MSE is:
+\begin_inset Formula 
+\[
+MSE=\left\langle \phi(t)-\overset{\sim}{\phi}(t),\phi(t)-\overset{\sim}{\phi}(t)\right\rangle 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\langle \begin{bmatrix}\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\\
+\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)
+\end{bmatrix},\begin{bmatrix}\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\\
+\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)
+\end{bmatrix}\right\rangle 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\left(\left(\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\right)^{2}+\left(\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)\right)^{2}\right)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\left(\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\right)^{2}dt+\stackrel[0]{1}{\int}\left(\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)\right)^{2}dt
+\]
+
+\end_inset
+
+The optimal coefficients in MSE sense will achived by demending:
+\begin_inset Formula 
+\[
+\frac{\partial MSE}{\partial\phi_{j}}=0
+\]
+
+\end_inset
+
+Lets calulate the derivative:
+\begin_inset Formula 
+\[
+\frac{\partial MSE}{\partial\phi_{j}}=\frac{\partial}{\partial\phi_{j}}\stackrel[0]{1}{\int}\left(\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\right)^{2}dt+\frac{\partial}{\partial\phi_{j}}\stackrel[0]{1}{\int}\left(\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)\right)^{2}dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\frac{\partial}{\partial\phi_{j}}\left(\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\right)^{2}dt+\stackrel[0]{1}{\int}\frac{\partial}{\partial\phi_{j}}\left(\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)\right)^{2}dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-2\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\left(\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{1}(t)\right)dt-2\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\left(\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}\psi_{i}^{2}(t)\right)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-2\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\phi^{1}(t)dt+2\stackrel[i=1]{N}{\sum}\phi_{i}\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\psi_{i}^{1}(t)dt-2\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\phi^{2}(t)dt+2\stackrel[i=1]{N}{\sum}\phi_{i}\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\psi_{i}^{2}(t)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-2\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\phi^{1}(t)dt-2\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\phi^{2}(t)dt+2\stackrel[i=1]{N}{\sum}\phi_{i}\left(\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\psi_{i}^{1}(t)dt+\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\psi_{i}^{2}(t)dt\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=_{(1)}-2\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\phi^{1}(t)dt-2\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\phi^{2}(t)dt+2\phi_{j}
+\]
+
+\end_inset
+
+(1) : 
+\begin_inset Formula $\psi_{i}(t):[0,1)\rightarrow\mathbb{R}^{2}$
+\end_inset
+
+ is orthonormal set and therefore: 
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\psi_{i}^{1}(t)dt+\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\psi_{i}^{2}(t)dt=\delta_{ij}
+\]
+
+\end_inset
+
+Now lets demand 
+\begin_inset Formula $\frac{\partial MSE}{\partial\phi_{j}}=0$
+\end_inset
+
+ and we get:
+\begin_inset Formula 
+\[
+\phi_{j}^{opt}=\stackrel[0]{1}{\int}\psi_{j}^{1}(t)\phi^{1}(t)dt+\stackrel[0]{1}{\int}\psi_{j}^{2}(t)\phi^{2}(t)dt=\left\langle \psi_{j},\phi(t)\right\rangle 
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $j=1,...,N$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now lets calulate expression for minimal approximation MSE:
+\begin_inset Formula 
+\[
+MSE_{opt}=\stackrel[0]{1}{\int}\left(\phi^{1}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\psi_{i}^{1}(t)\right)^{2}dt+\stackrel[0]{1}{\int}\left(\phi^{2}(t)-\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\psi_{i}^{2}(t)\right)^{2}dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\left(\phi^{1}(t)\right)^{2}-2\stackrel[0]{1}{\int}\phi^{1}(t)\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\psi_{i}^{1}(t)dt+\stackrel[0]{1}{\int}\left(\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\psi_{i}^{1}(t)\right)^{2}dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++\stackrel[0]{1}{\int}\left(\phi^{2}(t)\right)^{2}-2\stackrel[0]{1}{\int}\phi^{2}(t)\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\psi_{i}^{2}(t)dt+\stackrel[0]{1}{\int}\left(\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\psi_{i}^{2}(t)\right)^{2}dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\left(\phi^{1}(t)\right)^{2}-2\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\stackrel[0]{1}{\int}\phi^{1}(t)\psi_{i}^{1}(t)dt+\stackrel[i=1]{N}{\sum}\stackrel[j=1]{N}{\sum}\phi_{i}^{opt}\phi_{j}^{opt}\stackrel[0]{1}{\int}\psi_{i}^{1}(t)\psi_{j}^{1}(t)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++\stackrel[0]{1}{\int}\left(\phi_{i}^{2}(t)\right)^{2}-2\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\stackrel[0]{1}{\int}\phi^{2}(t)\psi_{i}^{2}(t)dt+\stackrel[i=1]{N}{\sum}\stackrel[j=1]{N}{\sum}\phi_{i}^{opt}\phi_{j}^{opt}\stackrel[0]{1}{\int}\psi_{i}^{2}(t)\psi_{j}^{2}(t)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\left(\phi^{1}(t)\right)^{2}+\stackrel[0]{1}{\int}\left(\phi^{2}(t)\right)^{2}-2\stackrel[i=1]{N}{\sum}\phi_{i}^{opt}\left(\stackrel[0]{1}{\int}\phi^{1}(t)\psi_{i}^{1}(t)dt+\stackrel[0]{1}{\int}\phi^{2}(t)\psi_{i}^{2}(t)dt\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++\stackrel[i=1]{N}{\sum}\stackrel[j=1]{N}{\sum}\phi_{i}^{opt}\phi_{j}^{opt}\left(\stackrel[0]{1}{\int}\psi_{i}^{1}(t)\psi_{j}^{1}(t)dt+\stackrel[0]{1}{\int}\psi_{i}^{2}(t)\psi_{j}^{2}(t)dt\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=_{(1)}\stackrel[0]{1}{\int}\left(\phi^{1}(t)\right)^{2}+\stackrel[0]{1}{\int}\left(\phi^{2}(t)\right)^{2}-2\stackrel[i=1]{N}{\sum}\left(\phi_{i}^{opt}\right)^{2}+\stackrel[i=1]{N}{\sum}\left(\phi_{i}^{opt}\right)^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\int}\left(\phi^{1}(t)\right)^{2}+\stackrel[0]{1}{\int}\left(\phi^{2}(t)\right)^{2}-\stackrel[i=1]{N}{\sum}\left(\phi_{i}^{opt}\right)^{2}
+\]
+
+\end_inset
+
+Explanations:
+\begin_inset Newline newline
+\end_inset
+
+(1) :As we showed : 
+\begin_inset Formula $\stackrel[0]{1}{\int}\phi^{1}(t)\psi_{i}^{1}(t)dt+\stackrel[0]{1}{\int}\phi^{2}(t)\psi_{i}^{2}(t)dt=\phi_{i}^{opt}$
+\end_inset
+
+, and by inner-product definition:
+\begin_inset Formula 
+\[
+\stackrel[0]{1}{\int}\psi_{i}^{1}(t)\psi_{j}^{1}(t)dt+\stackrel[0]{1}{\int}\psi_{i}^{2}(t)\psi_{j}^{2}(t)dt=\delta_{ij}
+\]
+
+\end_inset
+
+And by the given definition for inner-product we can write the expression
+ we got as:
+\begin_inset Formula 
+\[
+MSE_{opt}=\left\langle \phi(t),\phi(t)\right\rangle -\stackrel[i=1]{N}{\sum}\left(\phi_{i}^{opt}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

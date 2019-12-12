@@ -1,0 +1,214 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+  
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding cp1255
+\fontencoding global
+\font_roman "default" "Times New Roman"
+\font_sans "default" "Times New Roman"
+\font_typewriter "default" "Times New Roman"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Part II - Matlab
+\end_layout
+
+\begin_layout Subsection*
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi(x,y)=A\cos\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A=5000,\omega_{x}=5,\omega_{y}=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The given signal has a maximal value of 
+\begin_inset Formula 
+\[
+\phi_{H}=\phi(0,0)=A\cos0\cos0=A
+\]
+
+\end_inset
+
+And a minmal value of
+\begin_inset Formula 
+\[
+\phi_{L}=\phi\left(\frac{1}{2\omega_{x}},0\right)=A\cos(\pi)\cos0=-A
+\]
+
+\end_inset
+
+and therfore the range of values is of size: 
+\begin_inset Formula $\phi_{H}-\phi_{L}=2A$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}\phi(x,y)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}A\cos\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(-2\pi\omega_{x}A\sin\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+4\pi^{2}\omega_{x}^{2}A^{2}\stackrel[0]{1}{\intop}\sin^{2}\left(2\pi\omega_{x}x\right)\cos^{2}\left(2\pi\omega_{x}x\right)dx\stackrel[0]{1}{\intop}\cos^{2}\left(2\pi\omega_{y}y\right)dy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=4\pi^{2}\omega_{x}^{2}A^{2}\cdotp\left.\frac{x}{8}-\frac{sin\left(8\pi\omega_{x}x\right)}{64\pi\omega_{x}}\right|_{x=0}^{1}\left.\frac{y}{2}+\frac{\sin\left(4\pi\omega_{y}y\right)}{8\pi\omega_{y}}\right|_{y=0}^{1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=4\pi^{2}\omega_{x}^{2}A^{2}\left(\frac{1}{8}\right)\left(\frac{1}{2}\right)=\frac{\pi^{2}\omega_{x}^{2}A^{2}}{4}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Downarrow
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\frac{\pi^{2}\omega_{x}^{2}A^{2}}{4}
+\]
+
+\end_inset
+
+In analog way we will get for 
+\begin_inset Formula $Energy\left(\phi'_{y}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{y}\right)=\frac{\pi^{2}\omega_{y}^{2}A^{2}}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
