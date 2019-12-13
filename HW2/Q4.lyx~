@@ -321,7 +321,7 @@ The bit allocation optimization problem is:
 \end_inset
 
 Subject to 
-\begin_inset Formula $N_{x},N_{y}b=B$
+\begin_inset Formula $N_{x},N_{y},b=B$
 \end_inset
 
 .

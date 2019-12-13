@@ -83,12 +83,16 @@
 
 \begin_body
 
-\begin_layout Section*
+\begin_layout Part*
 Part II - Matlab
 \end_layout
 
+\begin_layout Section*
+Part - 1
+\end_layout
+
 \begin_layout Subsection*
-1
+a
 \end_layout
 
 \begin_layout Standard
@@ -110,7 +114,7 @@ A=5000,\omega_{x}=5,\omega_{y}=3
 
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 The given signal has a maximal value of 
 \begin_inset Formula 
 \[
@@ -119,7 +123,7 @@ The given signal has a maximal value of
 
 \end_inset
 
-And a minmal value of
+And a minimal value of
 \begin_inset Formula 
 \[
 \phi_{L}=\phi\left(\frac{1}{2\omega_{x}},0\right)=A\cos(\pi)\cos0=-A
@@ -127,8 +131,8 @@ And a minmal value of
 
 \end_inset
 
-and therfore the range of values is of size: 
-\begin_inset Formula $\phi_{H}-\phi_{L}=2A$
+and therefore the range of values is of size: 
+\begin_inset Formula $\phi_{H}-\phi_{L}=2A=10,000$
 \end_inset
 
 .
@@ -150,7 +154,7 @@ Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left
 
 \begin_inset Formula 
 \[
-=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(-2\pi\omega_{x}A\sin\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)\right)^{2}dxdy
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(-2\pi\omega_{x}A\sin\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)\right)^{2}dxdy
 \]
 
 \end_inset
@@ -158,7 +162,7 @@ Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left
 
 \begin_inset Formula 
 \[
-4\pi^{2}\omega_{x}^{2}A^{2}\stackrel[0]{1}{\intop}\sin^{2}\left(2\pi\omega_{x}x\right)\cos^{2}\left(2\pi\omega_{x}x\right)dx\stackrel[0]{1}{\intop}\cos^{2}\left(2\pi\omega_{y}y\right)dy
+4\pi^{2}\omega_{x}^{2}A^{2}\stackrel[0]{1}{\intop}\sin^{2}\left(2\pi\omega_{x}x\right)dx\stackrel[0]{1}{\intop}\cos^{2}\left(2\pi\omega_{y}y\right)dy
 \]
 
 \end_inset
@@ -166,15 +170,7 @@ Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left
 
 \begin_inset Formula 
 \[
-=4\pi^{2}\omega_{x}^{2}A^{2}\cdotp\left.\frac{x}{8}-\frac{sin\left(8\pi\omega_{x}x\right)}{64\pi\omega_{x}}\right|_{x=0}^{1}\left.\frac{y}{2}+\frac{\sin\left(4\pi\omega_{y}y\right)}{8\pi\omega_{y}}\right|_{y=0}^{1}
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-=4\pi^{2}\omega_{x}^{2}A^{2}\left(\frac{1}{8}\right)\left(\frac{1}{2}\right)=\frac{\pi^{2}\omega_{x}^{2}A^{2}}{4}
+=4\pi^{2}\omega_{x}^{2}A^{2}\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)=\pi^{2}\omega_{x}^{2}A^{2}
 \]
 
 \end_inset
@@ -190,7 +186,7 @@ Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left
 
 \begin_inset Formula 
 \[
-Energy\left(\phi'_{x}\right)=\frac{\pi^{2}\omega_{x}^{2}A^{2}}{4}
+Energy\left(\phi'_{x}\right)=\pi^{2}\omega_{x}^{2}A^{2}\left(=6.1685\cdot10^{9}\right)
 \]
 
 \end_inset
@@ -202,8 +198,727 @@ In analog way we will get for
 :
 \begin_inset Formula 
 \[
-Energy\left(\phi'_{y}\right)=\frac{\pi^{2}\omega_{y}^{2}A^{2}}{4}
+Energy\left(\phi'_{y}\right)=\pi^{2}\omega_{y}^{2}A^{2}\left(=2.2206\cdot10^{9}\right)
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b
+\end_layout
+
+\begin_layout Standard
+The signal as image histogram:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/phi_xy_histogram.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This signal as graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/phi_xy.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c
+\end_layout
+
+\begin_layout Standard
+The values we got from the numerically calculation is:
+\end_layout
+
+\begin_layout Standard
+Value range: 2A(=10,000)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Energy\left(\phi'_{x}\right)=6.1803\cdot10^{9}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Energy\left(\phi'_{y}\right)=2.225\cdot10^{9}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The value range is exactly the same, and we got pretty good approximations
+ for 
+\begin_inset Formula $Energy\left(\phi'_{x}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Energy\left(\phi'_{y}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+d+e
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{low}=5000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=50.4571$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=30.275$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=3.2731$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx5000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{high}=50000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=129.9571$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=77.9763$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=4.9341$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx50000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+f+g
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{low}=5000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=52$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=32$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx5000$
+\end_inset
+
+ , and the results we got in this part are pretty close to the results from
+ section e.
+\end_layout
+
+\begin_layout Standard
+The reconstructed signal using B_low
+\end_layout
+
+\begin_layout Standard
+as histogram image:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/phi_xy_reconstructed_histogram_B_low.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/phi_xy_reconstructed_B_low.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{high}=50000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=128$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=78$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx50000$
+\end_inset
+
+ , and the results we got in this part are pretty close to the results from
+ section e.
+\end_layout
+
+\begin_layout Standard
+The reconstructed signal using B_high
+\end_layout
+
+\begin_layout Standard
+as histogram image:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/phi_xy_reconstructed_histogram_B_high.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/phi_xy_reconstructed_B_high.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+h
+\end_layout
+
+\begin_layout Subsubsection*
+h-a
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi(x,y)=A\cos\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A=5000,\omega_{x}=5,\omega_{y}=7
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The given signal has a maximal value of 
+\begin_inset Formula 
+\[
+\phi_{H}=\phi(0,0)=A\cos0\cos0=A
+\]
+
+\end_inset
+
+And a minimal value of
+\begin_inset Formula 
+\[
+\phi_{L}=\phi\left(\frac{1}{2\omega_{x}},0\right)=A\cos(\pi)\cos0=-A
+\]
+
+\end_inset
+
+and therefore the range of values is of size: 
+\begin_inset Formula $\phi_{H}-\phi_{L}=2A=10,000$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}\phi(x,y)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(\frac{\partial}{\partial x}A\cos\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[0]{1}{\intop}\stackrel[0]{1}{\intop}\left(-2\pi\omega_{x}A\sin\left(2\pi\omega_{x}x\right)\cos\left(2\pi\omega_{y}y\right)\right)^{2}dxdy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+4\pi^{2}\omega_{x}^{2}A^{2}\stackrel[0]{1}{\intop}\sin^{2}\left(2\pi\omega_{x}x\right)dx\stackrel[0]{1}{\intop}\cos^{2}\left(2\pi\omega_{y}y\right)dy
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=4\pi^{2}\omega_{x}^{2}A^{2}\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)=\pi^{2}\omega_{x}^{2}A^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Downarrow
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{x}\right)=\pi^{2}\omega_{x}^{2}A^{2}\left(=6.1685\cdot10^{9}\right)
+\]
+
+\end_inset
+
+In analog way we will get for 
+\begin_inset Formula $Energy\left(\phi'_{y}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Energy\left(\phi'_{y}\right)=\pi^{2}\omega_{y}^{2}A^{2}\left(=1.209\cdot10^{10}\right)
+\]
+
+\end_inset
+
+We can see that the energy in y direction increased, as we could expected
+ because 
+\begin_inset Formula $\omega_{y}$
+\end_inset
+
+ was increased and thus the function frequency increased.
+\end_layout
+
+\begin_layout Subsubsection*
+h-b
+\end_layout
+
+\begin_layout Standard
+The signal as image histogram:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/h-a_phi_xy-histogram.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This signal as graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/h-a-phi_xy.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see the signal has higher frequency compare to the last one.
+\end_layout
+
+\begin_layout Subsubsection*
+h-c
+\end_layout
+
+\begin_layout Standard
+The values we got from the numerically calculation is:
+\end_layout
+
+\begin_layout Standard
+Value range: 2A(=10,000)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Energy\left(\phi'_{x}\right)=6.1803\cdot10^{9}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Energy\left(\phi'_{y}\right)=1.12113\cdot10^{10}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The value range is exactly the same, and we got pretty good approximations
+ for 
+\begin_inset Formula $Energy\left(\phi'_{x}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Energy\left(\phi'_{y}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+h-d+e
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{low}=5000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=36.6292$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=51.2788$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=2.662$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx5000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{high}=50000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=90.8949$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=127.2479$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=4.3229$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx50000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we could expect, 
+\begin_inset Formula $N_{y}$
+\end_inset
+
+ got larger amount of the bits because y is the higher frequency now, compare
+ to the function before.
+\end_layout
+
+\begin_layout Subsubsection*
+h- f+g
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{low}=5000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=34$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=49$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx5000$
+\end_inset
+
+ , and the results we got in this part are pretty close to the results from
+ section e.
+\end_layout
+
+\begin_layout Standard
+The reconstructed signal using B_low
+\end_layout
+
+\begin_layout Standard
+as histogram image:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/h-phi_xy_reconstructed_histogram_B_low.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/h-phi_xy_reconstructed_B_low.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The values we got for 
+\begin_inset Formula $B_{high}=50000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{x}=96$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{y}=130$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and indeed 
+\begin_inset Formula $N_{x}N_{y}b\approx50000$
+\end_inset
+
+ , and the results we got in this part are pretty close to the results from
+ section e.
+\end_layout
+
+\begin_layout Standard
+The reconstructed signal using B_high
+\end_layout
+
+\begin_layout Standard
+as histogram image:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/h-phi_xy_reconstructed_histogram_B_high.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Final/h-phi_xy_reconstructed_B_high.jpg
+	scale 50
 
 \end_inset
 

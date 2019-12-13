@@ -363,24 +363,7 @@ Now we prove that
 \end_layout
 
 \begin_layout Enumerate
-As we seen the k-term approximation for an orthonormal basis 
-\begin_inset Formula $\left\{ \beta\right\} _{i=1}^{n}$
-\end_inset
 
- is : 
-\begin_inset Formula $f_{k}=\stackrel[i=1]{k}{\sum}\left\langle f,\beta_{i}\right\rangle \beta_{i}$
-\end_inset
-
- and the corresponding MSE is:
-\begin_inset Formula 
-\[
-MSE_{\beta}(k)=\stackrel[0]{1}{\intop}f^{2}-\stackrel[i=1]{k}{\sum}\left(\left\langle f,\beta_{i}\right\rangle \right)^{2}
-\]
-
-\end_inset
-
-Thus, we can see that the MSE will be smaller for the basis which its first
- k elements will have higher inner-product with f.
 \end_layout
 
 \end_deeper

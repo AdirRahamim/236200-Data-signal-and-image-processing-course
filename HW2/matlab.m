@@ -23,11 +23,11 @@ phi_H = A;
 phi_xy=A*cos(2*pi*omega_x*(x_grid)).* cos(2*pi* omega_y *(y_grid));
 
 %Plot the function as an image histogram.
-%imshow(phi_xy, [phi_L phi_H]);
-%title('phi(x,y) image');
+imshow(phi_xy, [phi_L phi_H]);
+title('phi(x,y) image');
 
-%figure('Name', 'phi(x,y)');
-%surf(x_grid,y_grid,phi_xy, 'LineStyle' , 'none');
+figure('Name', 'phi(x,y)');
+surf(x_grid,y_grid,phi_xy, 'LineStyle' , 'none');
 
 %% section c
 
@@ -97,36 +97,126 @@ ub_l = [B_low B_low B_low];
 options = optimoptions('fmincon', 'MaxFunctionEvaluation', inf, 'MaxIterations' , inf);
 [opt_l, opt_mse_l] = fmincon(MSE, x0, [], [], [],[], lb_l, ub_l, con_l, options);
 
+% Parameters we got: 
+%Nx = 50.4571
+%Ny = 30.275
+%b = 3.2731
+%MSE_opt = 4.9376*10^5
+
 % Do same optimization for B_high
 con_h = @(x)deal([], (x(1)*x(2)*x(3)-B_high));
 lb_h = [0.001 0.001 0.001];
 ub_h = [B_high B_high B_high];
 [opt_h, opt_mse_h] = fmincon(MSE, x0, [], [], [],[], lb_h, ub_h, con_h, options);
-
+% Parameters we got:
+%Nx = 129.9571
+%Ny = 77.9763
+%b = 4.9341
+%MSE_opt = 6.9907*10^4
 
 %% Part f + g
 
-%Set bit budget
-B = B_low;
+% Hold the parameters result
+best_parameters_low = zeros(1,3);
 
-best_parameters = zeros(1,3);
-best_mse = intmax;
-tic;
-for Nx = 1 : B
-   for Ny = 1 : B
-      b = floor(B/(Nx*Ny));
+% Hold best MSE result
+best_mse_low = intmax;
+
+% Run over all possible values for Nx
+for Nx = 1 : B_low
+    
+    % Run over all possibles values for Ny
+   for Ny = 1 : B_low
+       
+      % Calculate b accordiny to current Nx and Ny
+      % If b=0, this run in useless, continue
+      b = floor(B_low/(Nx*Ny));
       if b==0
           continue;
       end
-      %fprintf('Been here\n');
+      x = [Nx, Ny, b];
+      
+      % Calculate the MSE, if its better than the best one until this run,
+      % update the parameters and save this result
+      curr_mse = MSE(x);
+      if(curr_mse < best_mse_low)
+          best_mse_low = curr_mse;
+          best_parameters_low = [Nx Ny b];
+      end    
+   end  
+end
+
+% Parameters we got foo B_low:
+% Nx = 52
+% Ny = 32
+% b =3
+% MSE_low = 5.0175*10^5
+
+% Do the same for B_high...
+
+best_parameters_high = zeros(1,3);
+best_mse_high = intmax;
+for Nx = 1 : B_high
+   for Ny = 1 : B_high
+      b = floor(B_high/(Nx*Ny));
+      if b==0
+          continue;
+      end
       x = [Nx, Ny, b];
       curr_mse = MSE(x);
-      if(curr_mse < best_mse)
-          best_mse = curr_mse;
-          best_parameters = [Nx Ny b];
-      end
-      
-   end
-    
+      if(curr_mse < best_mse_high)
+          best_mse_high = curr_mse;
+          best_parameters_high = [Nx Ny b];
+      end    
+   end  
 end
-toc;
+
+% Parameters we got for B_high:
+% Nx = 128
+% Ny = 78
+% b =5
+% MSE_low = 7.0049*10^4
+
+
+% Plot the results: 
+
+% First, plot for values obtained by B_low
+
+continuous_approx_delta_x = 1/best_parameters_low(1);
+continuous_approx_delta_y = 1/best_parameters_low(2);
+%2D grid of (0,1]x(0,1]
+grid_x = 0 : continuous_approx_delta_x : 1;
+grid_y = 0 : continuous_approx_delta_y : 1;
+[x_grid,y_grid] = meshgrid(grid_x,grid_y);
+
+%calculate the function values 
+phi_xy_l=A*cos(2*pi*omega_x*(x_grid)).* cos(2*pi* omega_y *(y_grid));
+
+%Plot the function as an image histogram.
+imshow(phi_xy_l, [phi_L phi_H]);
+title('phi(x,y) image reconstructed with B low');
+
+figure('Name', 'phi(x,y) reconstructed with B low');
+surf(x_grid,y_grid,phi_xy_l, 'LineStyle' , 'none');
+title('phi(x,y) reconstructed with B low');
+
+% Do the same for B_high
+
+continuous_approx_delta_x = 1/best_parameters_high(1);
+continuous_approx_delta_y = 1/best_parameters_high(2);
+%2D grid of (0,1]x(0,1]
+grid_x = 0 : continuous_approx_delta_x : 1;
+grid_y = 0 : continuous_approx_delta_y : 1;
+[x_grid,y_grid] = meshgrid(grid_x,grid_y);
+
+%calculate the function values 
+phi_xy_h=A*cos(2*pi*omega_x*(x_grid)).* cos(2*pi* omega_y *(y_grid));
+
+%Plot the function as an image histogram.
+imshow(phi_xy_h, [phi_L phi_H]);
+title('phi(x,y) image reconstructed with B high');
+
+figure('Name', 'phi(x,y) reconstructed with B high');
+surf(x_grid,y_grid,phi_xy_h, 'LineStyle' , 'none');
+title('phi(x,y) reconstructed with B high');
+
