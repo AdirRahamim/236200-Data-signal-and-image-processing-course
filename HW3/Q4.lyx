@@ -1,0 +1,346 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+  
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding cp1255
+\fontencoding global
+\font_roman "default" "Times New Roman"
+\font_sans "default" "Times New Roman"
+\font_typewriter "default" "Times New Roman"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Question 4
+\end_layout
+
+\begin_layout Section*
+a
+\end_layout
+
+\begin_layout Standard
+By the convolution definition we get:
+\begin_inset Formula 
+\[
+f\left(t\right)*g\left(t\right)=\stackrel[-\infty]{\infty}{\int}f\left(x\right)g\left(t-x\right)dx=h\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lets denote 
+\begin_inset Formula $f\left(t-1\right)=a\left(t\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $g\left(t+1\right)=b\left(t\right)$
+\end_inset
+
+ and we get:
+\begin_inset Formula 
+\[
+a\left(t\right)*b\left(t\right)=\stackrel[-\infty]{\infty}{\int}a\left(x\right)*b\left(t-x\right)dx=\stackrel[-\infty]{\infty}{\int}f\left(x-1\right)g\left(t-x+1\right)dx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\stackrel[-\infty]{\infty}{\int}f\left(x-1\right)g\left(t-(x-1)\right)dx=_{\left(1\right)}\stackrel[-\infty]{\infty}{\int}f\left(l\right)g\left(t-l\right)dl=h\left(l\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Explanation to 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+: change of variable: 
+\begin_inset Formula $\left(x-1\right)=l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And we get the 
+\begin_inset Formula $f\left(t-1\right)*g\left(t+1\right)=h\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+b
+\end_layout
+
+\begin_layout Standard
+Lets denote as 
+\begin_inset Formula $H\left(u\right)$
+\end_inset
+
+ the Fourier transform of 
+\begin_inset Formula $h\left(u\right)$
+\end_inset
+
+, than:
+\begin_inset Formula 
+\[
+H\left(u\right)=\mathcal{F}\left(f\left(t\right)*g\left(t\right)\right)=_{\left(1\right)}F\left(u\right)\cdot G\left(u\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+: Convolution theorem.
+\end_layout
+
+\begin_layout Standard
+By the convolution definition we can see that: 
+\begin_inset Formula $\stackrel[-\infty]{\infty}{\int}f\left(t\right)g\left(-t\right)dt=h\left(0\right),$
+\end_inset
+
+and therefore:
+\begin_inset Formula 
+\[
+\stackrel[-\infty]{\infty}{\int}f\left(t\right)g\left(-t\right)dt=h\left(0\right)=\mathcal{F}^{-1}\left(\mathcal{F}\left(h\left(0\right)\right)\right)=\mathcal{F}^{-1}\left(H\left(u\right)\right)\left(0\right)=\mathcal{F}^{-1}\left(F\left(u\right)G\left(u\right)\right)\left(0\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=_{\left(1\right)}\stackrel[-\infty]{\infty}{\int}F\left(u\right)G\left(u\right)e^{2\pi i0u}du=_{\left(2\right)}\stackrel[-\infty]{\infty}{\int}F\left(u\right)G\left(u\right)du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Explanations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+: By the definition of inverse Fourier transform.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+:
+\begin_inset Formula $e^{2\pi i0u}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+c
+\end_layout
+
+\begin_layout Standard
+By using the result from previous question:
+\begin_inset Formula 
+\[
+\stackrel[-\infty]{\infty}{\intop}F\left(u\right)g\left(u\right)du=_{\left(1\right)}\stackrel[-\infty]{\infty}{\intop}f\left(t\right)\mathcal{F}^{-1}\left(g\left(u\right)\right)\left(-t\right)dt=_{\left(2\right)}\stackrel[-\infty]{\infty}{\intop}f\left(t\right)G\left(-\left(-t\right)\right)dt=\stackrel[-\infty]{\infty}{\intop}f\left(t\right)G\left(t\right)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Explanations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+ The result from previous question: 
+\begin_inset Formula $\stackrel[-\infty]{\infty}{\int}F\left(u\right)G\left(u\right)du=\stackrel[-\infty]{\infty}{\int}f\left(t\right)g\left(-t\right)dt$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+ By the definition of Fourier transform and inverse Fourier transform :
+\begin_inset Formula 
+\[
+X\left(t\right)=\stackrel[-\infty]{\infty}{\intop}x\left(u\right)e^{-2\pi itu}du
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathcal{F}^{-1}\left(x\left(\omega\right)\right)\left(t\right)=\stackrel[-\infty]{\infty}{\intop}x\left(\omega\right)e^{2\pi i\omega t}d\omega
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see that: 
+\begin_inset Formula 
+\[
+\mathcal{F}^{-1}\left(x\left(\omega\right)\right)\left(t\right)=X\left(-t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+d
+\end_layout
+
+\begin_layout Standard
+Using the hind and previous question:
+\begin_inset Formula 
+\[
+\mathcal{F}\left(sinc\left(t\right)\right)=\sqrt{\frac{\pi}{2}}\cdot box\left(\frac{t}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and:
+\begin_inset Formula 
+\[
+\mathcal{F}^{-1}\left(\frac{e^{i\text{\ensuremath{\pi t}}}}{1+4\pi^{2}t^{2}}\right)=\frac{e^{-\frac{\left|t-\pi\right|}{2\pi}}}{2\sqrt{2\pi}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+than we get:
+\begin_inset Formula 
+\[
+\stackrel[-\infty]{\infty}{\int}\frac{e^{-\frac{\left|t-\pi\right|}{2\pi}}}{2\sqrt{2\pi}}sinc\left(t\right)dt=_{\left(1\right)}\stackrel[-\infty]{\infty}{\int}\frac{e^{-\frac{\left|t-\pi\right|}{2\pi}}}{2\sqrt{2\pi}}\sqrt{\frac{\pi}{2}}\cdot box\left(\frac{t}{2}\right)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sqrt{\frac{\pi}{2}}\stackrel[-1]{1}{\int}\frac{e^{-\frac{\left|t-\pi\right|}{2\pi}}}{2\sqrt{2\pi}}dt=\sqrt{\frac{\pi}{2}}\cdot0.24299=0.304547
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
